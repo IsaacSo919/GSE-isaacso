@@ -96,7 +96,6 @@
 }
 </style>
 <button id="resetButton">Reset</button>
-<img id="close-Button" src="{% static 'images/icons8-close-50.png' %}" alt="Close" onclick="goBack()">
 <div class="start-container">
     <p id="plantTree-text"> Click the tree to start planting!</p>
     <img id="plantButton" src="{% static 'images/treebutton.jpg' %}" alt="treebutton" onclick="plantTree()">
@@ -105,10 +104,10 @@
     <source src="{% static 'audio/A Lonely Cherry Tree.mp3' %}" type="audio/mpeg">
 </audio>
 </div>
-<img id="treeImage1" src="{% static 'images/seed.jpg' %}" alt="Seed">
-<img id="treeImage2" src="{% static 'images/sprout.jpg' %}" alt="Sprout">
-<img id="treeImage3" src="{% static 'images/sapling.jpg' %}" alt="Sapling">
-<img id="treeImage4" src="{% static 'images/tree.jpg' %}" alt="Tree">
+<img id="treeImage1" src="{% static 'images/seed.png' %}" alt="Seed">
+<img id="treeImage2" src="{% static 'images/sprout.png' %}" alt="Sprout">
+<img id="treeImage3" src="{% static 'images/sapling.png' %}" alt="Sapling">
+<img id="treeImage4" src="{% static 'images/tree.png' %}" alt="Tree">
 
 
 <div class="countdown">
@@ -161,10 +160,10 @@ closeButton.addEventListener('mouseout', () => {
 
  document.getElementById('resetButton').style.display = 'none';
 // Define the tree stages
-let stage1 = 'static/images/seed.jpg';
-let stage2 = 'static/images/sprout.jpg';
-let stage3 = 'static/images/sapling.jpg';
-let stage4 = 'static/images/tree.jpg';
+let stage1 = 'static/images/seed.png';
+let stage2 = 'static/images/sprout.png';
+let stage3 = 'static/images/sapling.png';
+let stage4 = 'static/images/tree.png';
 
 let stages = [stage1, stage2, stage3, stage4];
 let currentStage = 1;
@@ -176,12 +175,8 @@ window.onload = function() {
     // Hide all images initially
     for (let i = 1; i <= stages.length; i++) {
         document.getElementById('treeImage' + i).style.display = 'none';
-    }
-    
+    }  
 };
-function goBack() {
-    window.history.back();
-}
 function plantTree() {
     if (plantingInProgress) return; // If planting is already in progress, exit
 
